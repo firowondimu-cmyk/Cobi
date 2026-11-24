@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ጮቢ የቤት እቃ መደብር</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F5F2; --surface:#FFFFFF; --ink:#18261F; --muted:#5B6B62;
+  --green:#1F5A42; --on-green:#F1F5F2; --gold:#E0A526; --line:#D5DED8;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101A15; --surface:#18261F; --ink:#EAF0EC; --muted:#9DB0A5;
+    --green:#2E7A5A; --on-green:#F1F5F2; --gold:#E8B445; --line:#2A3B32;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101A15; --surface:#18261F; --ink:#EAF0EC; --muted:#9DB0A5;
+  --green:#2E7A5A; --on-green:#F1F5F2; --gold:#E8B445; --line:#2A3B32;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans Ethiopic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.65;font-size:17px}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-weight:800;font-size:22px;text-decoration:none}
+.logo i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);margin-left:6px}
+nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{background:var(--green);color:var(--on-green);border-radius:24px;padding:44px 28px 36px;margin-top:6px}
+.hero h1{margin:0;font-size:clamp(76px,22vw,150px);line-height:1;font-weight:800;letter-spacing:-.02em}
+.hero h1 i{display:inline-block;width:.16em;height:.16em;border-radius:50%;background:var(--gold);margin-left:.08em}
+.hero p{max-width:30em;margin:14px 0 24px;font-size:19px;opacity:.92}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn.gold{background:var(--gold);color:#18261F}
+.btn.line{border-color:var(--on-green);color:var(--on-green);background:transparent}
+.btn.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn:focus-visible,.chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+section{padding:44px 0 8px}
+h2{font-size:28px;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:12px}
+.chip{flex:none;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-family:inherit;font-size:15px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:120px;display:grid;place-items:center;font-size:56px}
+.card .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{margin:0;font-size:18px}
+.price{font-weight:800;font-size:20px}
+.price small{font-weight:400;color:var(--muted);font-size:14px}
+.card .btn{margin-top:auto;text-align:center;padding:10px 14px;font-size:15px}
+.about{display:grid;gap:12px;max-width:40em}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 22px;margin-top:10px}
+.contact dl{margin:0 0 18px;display:grid;gap:10px}
+.contact dt{color:var(--muted);font-size:14px}
+.contact dd{margin:0;font-weight:600;font-size:18px}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:36px 0 28px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">ጮቢ<i></i></a>
+    <nav><a href="#items">እቃዎች</a><a href="#about">ስለ እኛ</a><a href="#contact">ያግኙን</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>ጮቢ<i></i></h1>
+      <p>የቤት እቃ መደብር። ለቤትዎ የሚያስፈልግ ሁሉ በአንድ ቦታ፣ በጥሩ ዋጋ።</p>
+      <div class="btns">
+        <a class="btn gold" href="#items">እቃዎችን ይመልከቱ</a>
+        <a class="btn line" id="heroCall" href="#contact">ይደውሉልን</a>
+      </div>
+    </div>
+
+    <section id="items">
+      <h2>እቃዎች</h2>
+      <p class="sub">የሚፈልጉትን እቃ ይምረጡና በስልክ ወይም በቴሌግራም ያዙ።</p>
+      <div class="chips" id="chips" role="group" aria-label="ምድብ"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="about">
+      <h2>ስለ እኛ</h2>
+      <div class="about">
+        <p>ጮቢ ለቤት የሚያስፈልጉ እቃዎችን የሚሸጥ መደብር ነው፤ ከወጥ ቤት እቃ እስከ መኝታ ቤት ልብስ።</p>
+        <p>እቃውን አይተው ይመርጣሉ፣ በስልክ ወይም በቴሌግራም ያዛሉ፣ እኛ እናደርሳለን።</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>ያግኙን</h2>
+      <div class="contact">
+        <dl>
+          <div><dt>ስልክ</dt><dd id="phoneText"></dd></div>
+          <div><dt>ቴሌግራም</dt><dd id="tgText"></dd></div>
+          <div><dt>አድራሻ</dt><dd id="addrText"></dd></div>
+          <div><dt>የስራ ሰዓት</dt><dd id="hoursText"></dd></div>
+        </dl>
+        <div class="btns">
+          <a class="btn gold" id="callBtn" href="#">ይደውሉ</a>
+          <a class="btn ghost" id="tgBtn" href="#" target="_blank" rel="noopener">በቴሌግራም ይጻፉ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© ጮቢ የቤት እቃ መደብር</footer>
+</div>
+
+<script>
+/* ===== እዚህ ጋር የራስህን መረጃ ቀይር ===== */
+var SHOP = {
+  phone: "+251911000000",          // ስልክ ቁጥር
+  phoneShow: "0911 00 00 00",
+  telegram: "chobi_store",         // ያለ @
+  address: "አዲስ አበባ፣ ቦሌ",
+  hours: "ሰኞ እስከ ቅዳሜ፣ 2:00 – 12:00"
+};
+var PRODUCTS = [
+  {n:"ድስትና ምጣድ ስብስብ", c:"ወጥ ቤት", p:3200, e:"🍳", bg:"#F6E3B4"},
+  {n:"የሻይ ብርጭቆ ስብስብ", c:"ወጥ ቤት", p:850, e:"🫖", bg:"#F6E3B4"},
+  {n:"ባለ 6 ሰሃን ስብስብ", c:"ወጥ ቤት", p:1400, e:"🍽️", bg:"#F6E3B4"},
+  {n:"አልጋ ልብስ ሙሉ", c:"መኝታ", p:2600, e:"🛏️", bg:"#CFE3F0"},
+  {n:"ብርድ ልብስ", c:"መኝታ", p:1800, e:"🧣", bg:"#CFE3F0"},
+  {n:"ትራስ ጥንድ", c:"መኝታ", p:700, e:"🛌", bg:"#CFE3F0"},
+  {n:"ባለ 3 መቀመጫ ሶፋ", c:"ሳሎን", p:24000, e:"🛋️", bg:"#D9E8CE"},
+  {n:"የሳሎን ምንጣፍ", c:"ሳሎን", p:4500, e:"🟫", bg:"#D9E8CE"},
+  {n:"የጠረጴዛ መብራት", c:"መብራት", p:950, e:"💡", bg:"#F3D3CF"},
+  {n:"የግድግዳ ሰዓት", c:"ሳሎን", p:600, e:"🕰️", bg:"#D9E8CE"}
+];
+
+var cats = ["ሁሉም"];
+PRODUCTS.forEach(function(x){ if(cats.indexOf(x.c) < 0) cats.push(x.c); });
+var current = "ሁሉም";
+
+function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+function telLink(){ return "tel:" + SHOP.phone; }
+function tgLink(){ return "https://t.me/" + SHOP.telegram; }
+
+function renderChips(){
+  var box = document.getElementById("chips");
+  box.innerHTML = "";
+  cats.forEach(function(c){
+    var b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = c;
+    b.setAttribute("aria-pressed", c === current ? "true" : "false");
+    b.onclick = function(){ current = c; renderChips(); renderGrid(); };
+    box.appendChild(b);
+  });
+}
+function renderGrid(){
+  var g = document.getElementById("grid");
+  g.innerHTML = "";
+  PRODUCTS.filter(function(x){ return current === "ሁሉም" || x.c === current; })
+  .forEach(function(x){
+    var d = document.createElement("div");
+    d.className = "card";
+    d.innerHTML =
+      '<div class="thumb" style="background:' + x.bg + '">' + x.e + '</div>' +
+      '<div class="b"><h3></h3><div class="price">' + fmt(x.p) + ' <small>ብር</small></div>' +
+      '<a class="btn gold" href="' + telLink() + '">በስልክ ይዘዙ</a></div>';
+    d.querySelector("h3").textContent = x.n;
+    g.appendChild(d);
+  });
+}
+document.getElementById("phoneText").textContent = SHOP.phoneShow;
+document.getElementById("tgText").textContent = "@" + SHOP.telegram;
+document.getElementById("addrText").textContent = SHOP.address;
+document.getElementById("hoursText").textContent = SHOP.hours;
+document.getElementById("callBtn").href = telLink();
+document.getElementById("tgBtn").href = tgLink();
+renderChips(); renderGrid();
+</script>
+</body>
+</html>
